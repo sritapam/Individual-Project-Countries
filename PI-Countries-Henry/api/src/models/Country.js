@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
     alpha3Code:{
       type: DataTypes.STRING(3),
       allowNull: false, // no permite que este vacio
-      defaultValue:DataTypes.UUIDV4,//para q no se me repita el id
+      unique:true,//para q no se me repita el id
       primaryKey: true, //clave primaria
 
     },
@@ -33,10 +33,6 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     area:{
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    population:{
       type: DataTypes.INTEGER,
       allowNull: true,
     },
