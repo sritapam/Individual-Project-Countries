@@ -5,11 +5,9 @@ const { Op } = require("sequelize");
 
 const getAllCountries = async (req, res) => {
   const { name } = req.query;
-  try {
-    const countriesResult = [];
-    const countriesDb = await getFromDb();
 
-    countriesDb.forEach((c) => countriesResult.push(c.name));
+  try {
+    const countriesDb = await getFromDb();
 
     if (!name) {
       return res.send(countriesDb);
@@ -20,10 +18,16 @@ const getAllCountries = async (req, res) => {
       const nameMatch = await Country.findAll({
         where: {
           name: {
-            [Op.like]: `%${nameGood}%`,//que en el medio contenga eso SQL
+            [Op.like]: `%${nameGood}%`, //que en el medio contenga eso SQL
           },
         },
+        include: {
+          model: Activity,
+          attributes: ['name', 'difficulty', 'duration', 'season'],
+          through: { attributes: [] },
+        },
       });
+
       nameMatch.length === 0
         ? res.json({
             message: "We're sorry, no matches were found for your search",
@@ -31,12 +35,11 @@ const getAllCountries = async (req, res) => {
         : res.send(nameMatch);
     }
   } catch (e) {
-    res.send("Im catch error: ", e);
+    res.send(e);
   }
 };
 
 const getCountryById = async (req, res) => {
-  
   const countryId = req.params.idPais.toUpperCase();
   try {
     var countryFoundId = await Country.findOne({
@@ -46,10 +49,10 @@ const getCountryById = async (req, res) => {
       include: { model: Activity, through: { attributes: [] } },
     });
     countryFoundId.length === 0
-        ? res.json({
-            message: "We're sorry, no matches were found for your search",
-          })
-        : res.send(countryFoundId);
+      ? res.json({
+          message: "We're sorry, no matches were found for your search",
+        })
+      : res.send(countryFoundId);
   } catch (e) {
     res.send("Im catch error id: ", e);
   }

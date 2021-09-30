@@ -1,10 +1,14 @@
 const axios = require("axios");
-const { Country } = require("../db.js");
+const { Country, Activity } = require("../db.js");
 
 const getFromApi = async () => {
+  
+  try{
   const { data } = await axios.get("https://restcountries.com/v3/all");
-  const dataFromApi = data.map((c) => {
-    return {
+  
+  const dataFromApi = await data.map( async (c) => {
+    
+    const country = {
       name: c.name.common,
       alpha3Code: c.cca3,
       capital: c.capital ? c.capital[0] : "capital not found",
@@ -13,11 +17,20 @@ const getFromApi = async () => {
       region: c.subregion,
       flags: c.flags.find((e) => e.includes("png")),
     };
+  
+  Country.findOrCreate({
+    where: { alpha3Code: c.cca3 },
+    defaults: country,
   });
-const dB = await Country.bulkCreate(dataFromApi);
+  
+  return country;
+});
 
-  return dB;//fijarme o sacarlo porque es una promesa
-};
+return dataFromApi;
+} catch (e) {
+(e) => console.log(e);
+}
+}
 
 const getFromDb = async () => {
     const countriesinDb = await Country.findAll();
