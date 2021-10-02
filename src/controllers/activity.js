@@ -1,24 +1,28 @@
 const { Country, Activity } = require("../db.js");
-const { getFromDb } = require("../utils");
 
-const { Op } = require("sequelize");
 
 const postActivity = async (req, res) => {
 
-  const { name, difficulty, duration, season } = req.body;
-try{
+  try{
+  const { name, difficulty, duration, season, createdInDb, countries } = req.body;
+
   const activityCreated = await Activity.create({
-    name,
-    difficulty,
-    duration,
-    season,
-  });
-  res.send(activityCreated);
+    name, difficulty, duration, season, createdInDb
+  })
+
+  let activityDb = await Country.findAll(
+    {
+      where: {name: countries}
+    }
+  )
+  activityCreated.addCountry(activityDb);
+
+return res.status(200).send('Activity created');
 }
-catch (e){
-  res.status(404).send('Error')
-}
-  //error?.message | 'Error en carga de datos'
+catch (e) {
+  console.error(e);
+  return res.status(400).json({ message: 'Creation Failed' })}
 };
+
 
 module.exports = { postActivity };

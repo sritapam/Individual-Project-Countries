@@ -1,5 +1,5 @@
 const { Country, Activity } = require("../db.js");
-const { getFromDb } = require("../utils");
+const { getFromDb, getFromApi } = require("../utils");
 
 const { Op } = require("sequelize");
 
@@ -23,40 +23,44 @@ const getAllCountries = async (req, res) => {
         },
         include: {
           model: Activity,
-          attributes: ['name', 'difficulty', 'duration', 'season'],
+          attributes: ['name', 'difficulty', 'duration', 'season', 'createdInDb'],
           through: { attributes: [] },
         },
       });
 
       nameMatch.length === 0
         ? res.json({
-            message: "We're sorry, no matches were found for your search",
+            message: "We're sorry, no matches were found for your search"
           })
         : res.send(nameMatch);
     }
   } catch (e) {
-    res.send(e);
+    console.log(e);
   }
 };
 
 const getCountryById = async (req, res) => {
-  const countryId = req.params.idPais.toUpperCase();
-  try {
-    var countryFoundId = await Country.findOne({
+  
+  const countryId = req.params.idPais.toUpperCase()
+try {
+    let countryFoundId = await Country.findOne({
       where: {
         alpha3Code: countryId,
       },
-      include: { model: Activity, through: { attributes: [] } },
+      //include: { model: Activity, through: { attributes: [] } },
     });
-    countryFoundId.length === 0
-      ? res.json({
-          message: "We're sorry, no matches were found for your search",
-        })
-      : res.send(countryFoundId);
+    res.status(200).send(countryFoundId);
   } catch (e) {
-    res.send("Im catch error id: ", e);
+    console.log(e);
   }
 };
+
+
+
+
+
+
+
 
 module.exports = {
   getAllCountries,

@@ -6,7 +6,6 @@ module.exports = (sequelize) => {
     {
       name: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: true,
       },
       difficulty: {
@@ -20,6 +19,11 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("Spring", "Summer", "Autumn", "Winter"),
         allowNull: true,
       },
+      createdInDb:{
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      }
     },
     { timestamps: false }
   );
