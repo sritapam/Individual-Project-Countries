@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Country, Activity } = require("../db.js");
+const { Country } = require("../db.js");
 
 
 const getFromApi = async () => {
@@ -15,13 +15,19 @@ const getFromApi = async () => {
       continent: c.region,
       area: c.area,
       region: c.subregion,
-      flags: c.flags.find((e) => e.includes("png")),
+      flags: c.flags.find((el)=>el.includes('svg')),
     };
   });
 
-const dB = await Country.bulkCreate(dataFromApi);
+await Country.destroy({
+  where: {
 
-  // return dB;//fijarme o sacarlo porque es una promesa}
+  }
+})
+
+ const dB = await Country.bulkCreate(dataFromApi);
+
+  
 }
  catch (e) {
   (e) => console.log(e);

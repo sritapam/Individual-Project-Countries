@@ -27,12 +27,9 @@ const getAllCountries = async (req, res) => {
           through: { attributes: [] },
         },
       });
-
       nameMatch.length === 0
-        ? res.json({
-            message: "We're sorry, no matches were found for your search"
-          })
-        : res.send(nameMatch);
+        ? res.status(404).send( "We're sorry, no matches were found for your search")
+        : res.status(200).send(nameMatch);
     }
   } catch (e) {
     console.log(e);
@@ -43,13 +40,16 @@ const getCountryById = async (req, res) => {
   
   const countryId = req.params.idPais.toUpperCase()
 try {
-    let countryFoundId = await Country.findOne({
+    let countryFoundId = await Country.findOne( {
       where: {
         alpha3Code: countryId,
       },
-      //include: { model: Activity, through: { attributes: [] } },
+      include: { model: Activity, through: { attributes: [] } },
+      //include: Activity, required: false
     });
-    res.status(200).send(countryFoundId);
+    if(countryFoundId){
+      res.status(200).send(countryFoundId)
+    } res.status(404).send("There is no country with that id")
   } catch (e) {
     console.log(e);
   }
