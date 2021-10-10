@@ -1,0 +1,113 @@
+.app {
+    background: url('./assets/cinthia-aguilar-wHPpPa8seUM-unsplash.jpg') no-repeat center/cover;
+    backdrop-filter: blur(16px);
+    opacity: 1;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color:rgb(255, 254, 254);
+    text-shadow: 10px 10px 10px rgb(10, 10, 10);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .app{
+    background: url('./assets/cinthia-aguilar-wHPpPa8seUM-unsplash.jpg') no-repeat center/cover;
+    width:100vw;
+    height: 100vh;
+    backdrop-filter: blur(16px);
+    background-color: #41404015 ;
+} */
+
+
+/* .container{
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    margin: 20vh 20vw;
+    top: 5;
+    overflow: hidden;
+    background-image: url('./assets/photo-1476514525535-07fb3b4ae5f1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+} */
+ul.pagination{display: flex;
+    justify-content: space-around;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    align-items: flex-start;
+    background-color: #494b49;
+    color: white;
+    
+}
+
+
+div.card{
+display: inline-flex;
+margin-left: 0.5rem;
+}
+    /*
+    
+    
+
+     position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0px;    
+    background-position: center;
+    background-position: right bottom, left top;
+    text-align: center;
+    text-size-adjust: 3rem;
+    text-shadow: 2px 2px 6px rgb(10, 10, 10);
+ul.pagination {
+    width: 2000px;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0px;
+    color: black;
+    text-decoration: none;
+    background-color: #494b49;
+    color: white;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+
+    display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;} */

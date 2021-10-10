@@ -1,0 +1,41 @@
+.nav, .header{
+  background: url('../../assets/cinthia-aguilar-wHPpPa8seUM-unsplash.jpg') no-repeat center/cover;
+  backdrop-filter: blur(50px);
+  background-color: rgba(104, 128, 126, 0.486);
+  width: 100%;
+  height: 60px;
+  padding-right: 5px;
+  text-shadow: 6px 6px 10px rgb(10, 10, 10);
+  backdrop-filter: blur(12px);
+    background-color: #41404015;
+  }
+  /* .logo{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1;
+  } */
+.ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+.li {
+    display: inline-block;
+    float: right;
+  }
+
+.link {
+  display: inline-block;  
+  margin-left: 10px;
+    display: block;
+    text-decoration: none;
+    color: rgb(245, 240, 240);
+    text-align: center;
+    line-height: 30px;
+}
+.h4:hover{
+  box-shadow: 0 0 30px #61dafb;
+  background-color: #837b7d;
+  color: #e6e6ec;
+  border-radius: 1.5px;
+}
