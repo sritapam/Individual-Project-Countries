@@ -19,11 +19,11 @@ const getFromApi = async () => {
     };
   });
 
-await Country.destroy({
-  where: {
+// await Country.destroy({
+//   where: {
 
-  }
-})
+//   }
+// })
 
  const dB = await Country.bulkCreate(dataFromApi);
 
