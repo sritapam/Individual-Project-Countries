@@ -1,0 +1,17 @@
+.select{
+  font-family: monospace;
+  border-radius: 5px;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  margin: 1px;
+  width: -webkit-fill-available;
+  height: 22px;
+  margin-left: 300px;
+}
+.select:hover{
+  background-color: gainsboro;
+}
+.select:active{
+  background-color: rgb(169, 236, 248);
+}

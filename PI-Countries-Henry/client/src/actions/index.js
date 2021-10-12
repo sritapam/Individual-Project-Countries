@@ -61,7 +61,6 @@ export const getCountryByParams = (id) => {
   return async function (dispatch) {
     try {
       var json = await axios.get(`http://localhost:3001/countries/${id}`);
-      console.log(json.data, 'pameid')
       return dispatch({
         type: 'GET_COUNTRIES_BY_ID',
         payload: json.data,

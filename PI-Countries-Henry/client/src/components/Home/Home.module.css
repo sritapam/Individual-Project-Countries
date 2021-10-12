@@ -1,0 +1,88 @@
+
+.all {
+  background: url('../../assets/cinthia-aguilar-wHPpPa8seUM-unsplash.jpg') no-repeat center/cover;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color:rgb(255, 254, 254);
+  text-shadow: 4px 4px 6px rgb(10, 10, 10);
+  text-align: center;
+  width:100vw;
+  height: 100vh;
+  padding-bottom: 10%;
+}
+.bkg{
+  backdrop-filter: blur(10px);
+  background-color: #41404015;
+  width:100vw;
+  height: 100vh;
+}
+.container{
+  width: 90vw ;
+  height: 92vh;
+  position: absolute;
+  top:0;
+  margin: 3vh 5vw;
+  background-size: cover;
+  border-radius: 1rem;
+  background-color: rgba(207, 204, 204, 0.452);
+  opacity: 0.9;
+}
+
+.select{
+  font-family: monospace;
+  border-radius: 5px;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  margin: 1px;
+  width: -webkit-fill-available;
+  height: 22px;
+  margin-left: 300px;
+}
+.select:hover{
+  background-color: gainsboro;
+}
+.select:active{
+  background-color: rgb(169, 236, 248);
+}
+
+.search{
+  background-color: rgb(255 255 255 / 7%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  margin-left: 50px;
+}
+.search:hover{
+  box-shadow: 0 1px 7px 2px #ffffff;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  /* background-color: #b7c3c86c; */
+  border-radius: 10px;
+  margin-left: 120px;
+}
+.refresh{
+  background-color: rgb(255 255 255 / 7%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  border-bottom: transparent;
+}
+.refresh:hover{
+  box-shadow: 0 1px 7px 2px #ffffff;
+}

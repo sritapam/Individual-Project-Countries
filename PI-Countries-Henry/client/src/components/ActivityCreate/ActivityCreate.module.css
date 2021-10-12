@@ -1,0 +1,125 @@
+.button{
+    margin-top: 90px;
+    border-radius: 25px;
+    margin-left: 50px;
+    font-weight: 200;
+    color: rgb(243, 242, 241);
+        text-decoration: none;
+        font-size: 1.5em;
+        border-radius: 2px;
+        border: none;
+        background-color: #616062;
+}
+
+.button:hover{
+    box-shadow: 0 0 30px #61dafb;
+    background-color: #837b7d;
+}
+
+
+.activity{    
+    margin: 0px; 
+    padding: 0px;     
+    background-image: url("../../assets/philip-graves-Yd8acao6VYw-unsplash.jpg") ;
+    background-size: cover; 
+    width:100vw;
+    height: 100vh;
+    background-position: center;
+}
+
+.activity_title {
+ text-align: left;
+ padding: 10px;
+ margin-left: 20px;
+ text-shadow: 2px 3px 6px #000000;
+ font-size: 3rem;
+ color: rgb(241, 239, 239);
+ margin-top: 10px;
+ display: flex;
+ opacity: 10;
+}
+
+.form1 {    
+    margin-top: 0px;      
+    height: 80%;
+    width: 60%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+    font-weight: 800;
+    background-color: rgba(193, 213, 221, 0.253);
+    box-shadow: grey;
+    border-radius: 14px;
+}
+.form1:hover{
+    box-shadow: 0 1px 7px 2px #ffffff;
+  }
+.check_5{
+    font-size: 18px;
+    margin: 10px 10px;
+    font-family: monospace;
+}
+
+.laCh_1, .laCh_2, .laCh_3, .laCh_4, .laCh_5 {
+    margin: 20px 20px;
+    font-family: monospace;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
+.laCh_1, .laCh_2, .laCh_3, .laCh_4, .laCh_5::placeholder{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
+.input:hover{
+    background-color: rgb(146, 142, 148);
+    color:white
+}
+.line_1, .line_2, .line_3, .line_4, .line_5, .line_6{    
+    
+    font-size: 20px;    
+    margin: 15px 15px;     
+    display: flex; 
+    flex-direction: column;
+    font-family: monospace;
+    
+}
+
+.creaActivityButton{
+    margin-top: 80px;
+    margin-left: 12px;
+    text-align: center;
+    width:95%;
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px #000000;
+    font-family: monospace;
+    font-size: 1rem;
+}
+.shad1{
+    border-radius: 1px;
+    box-shadow: 5px 5px 10px #313131;
+    background-color:transparent; 
+    font-family: monospace;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    
+}
+
+.delete{
+    width: 80px;
+    height: 50px;
+    float: left;
+    justify-content: space-around;
+    background-color:rgba(221, 218, 218, 0.15);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0,0, .5);
+    font-size: 14px;
+    position: relative;
+    margin: 0vh 1vw;
+}
+.delete:hover{
+    /* box-shadow: 0px 8px 4px 2px rgb(5 211 226 / 90%); */
+    box-shadow:0px 8px 4px 2px rgb(246, 242, 242);
+}

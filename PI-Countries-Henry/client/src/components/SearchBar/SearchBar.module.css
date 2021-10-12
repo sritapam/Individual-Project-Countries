@@ -1,0 +1,28 @@
+.icon{
+    color:white;
+    font-size: 30px;
+}
+.container{
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+}
+.input{
+    font-family: monospace;
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    background-color: white;
+}
+.input::placeholder{
+    color: black;
+    text-align: center;
+    font-size: 15px;
+}
+.input:hover{
+    background-color: rgb(146, 142, 148);
+    color:white
+}
+.input:hover::placeholder{
+    color:white
+}

@@ -102,7 +102,6 @@ function rootReducer(state = initialState, action) {
         countries : sortedArea
       };
       case 'GET_COUNTRIES_BY_ID':
-        console.log(action.payload)
       return {
         ...state,
         country: action.payload,
