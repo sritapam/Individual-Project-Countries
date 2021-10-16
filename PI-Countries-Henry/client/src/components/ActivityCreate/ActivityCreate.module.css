@@ -42,14 +42,15 @@
 .form1 {    
     margin-top: 0px;      
     height: 80%;
-    width: 60%;
+    width: 50%;
     padding: 10px;
     margin-left: auto;
     margin-right: auto; 
     font-weight: 800;
-    background-color: rgba(193, 213, 221, 0.253);
+    background-color: rgba(231, 242, 246, 0.253);
     box-shadow: grey;
     border-radius: 14px;
+    text-shadow: rgb(6, 238, 215);
 }
 .form1:hover{
     box-shadow: 0 1px 7px 2px #ffffff;
@@ -58,6 +59,7 @@
     font-size: 18px;
     margin: 10px 10px;
     font-family: monospace;
+    
 }
 
 .laCh_1, .laCh_2, .laCh_3, .laCh_4, .laCh_5 {
@@ -66,6 +68,7 @@
     border-radius: 5px;
     border: none;
     background-color: white;
+    font-size: 25px;  
 }
 .laCh_1, .laCh_2, .laCh_3, .laCh_4, .laCh_5::placeholder{
     color: black;
@@ -78,23 +81,24 @@
 }
 .line_1, .line_2, .line_3, .line_4, .line_5, .line_6{    
     
-    font-size: 20px;    
-    margin: 15px 15px;     
+    font-size: 22px;    
+    margin: 8px 8px;     
     display: flex; 
     flex-direction: column;
     font-family: monospace;
+    text-shadow: 20px 3px 12px rgb(239, 244, 245);
     
 }
 
 .creaActivityButton{
-    margin-top: 80px;
+    margin-top: 40px;
     margin-left: 12px;
     text-align: center;
     width:95%;
     border-radius: 40px;
     box-shadow: 5px 5px 5px #000000;
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 .shad1{
     border-radius: 1px;
@@ -104,6 +108,7 @@
     border-radius: 5px;
     border: none;
     background-color: white;
+    height: 1.2rem;
     
 }
 
@@ -122,4 +127,7 @@
 .delete:hover{
     /* box-shadow: 0px 8px 4px 2px rgb(5 211 226 / 90%); */
     box-shadow:0px 8px 4px 2px rgb(246, 242, 242);
+}
+.error{
+    color: red;
 }

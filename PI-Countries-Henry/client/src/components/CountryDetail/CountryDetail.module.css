@@ -51,6 +51,25 @@
     text-shadow: rgb(51, 48, 48);
   }
 
-.button{
-  margin-top: 100%;
+  .button{
+    margin-top: 0%;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-weight: 200;
+    color: rgb(243, 242, 241);
+        text-decoration: none;
+        font-size: 1.5em;
+        border-radius: 3px;
+        border: none;
+        background-color: #616062;
+}
+
+.button:hover{
+    box-shadow: 0 0 30px #61dafb;
+    background-color: #837b7d;
+}
+.butto.size{
+  margin-right: 10px;
+  width: 0%;
+
 }

@@ -6,7 +6,7 @@ import s from "./Card.module.css";
 export default function Card({ name, flags, continent, alpha3Code }) {
   return (
     <div>
-        <div key={alpha3Code} className={s.card}>
+      <div key={alpha3Code} className={s.card}>
         <Link to={`/countries/${alpha3Code}`}>
           <img
             className={s.flag}
@@ -15,10 +15,10 @@ export default function Card({ name, flags, continent, alpha3Code }) {
             width="100px"
             heigth="45px"
           />
-           </Link>
-          <h3 className="name">{name}</h3>
-          <h5 className={s.continent}>Continent: {continent}</h5>
-        </div>
+        </Link>
+        <h3 className="name">{name}</h3>
+        <h5 className={s.continent}>Continent: {continent}</h5>
+      </div>
     </div>
   );
 }

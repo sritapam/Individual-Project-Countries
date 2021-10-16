@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
  import s from "./About.module.css";
 
 export default function About() {
   return (
-    <body>
+    <body className={s.body}>
+      <NavBar/>
       <section className={s.full}>
         <div className={s.fullp}>
           <div className={s.content}>

@@ -6,12 +6,15 @@
     left: 0;
   right: 0;
   bottom: 0;
+  background: url('../../assets/photo-1476514525535-07fb3b4ae5f1.jpg');
+  background-size: cover;
+  opacity: 1;
   }
   
   .full {
     width: 100%;
     height: 100%;
-    background: url('../../assets/photo-1476514525535-07fb3b4ae5f1.jpg');
+    background: transparent;
     background-size: cover;
     display: table;
     margin: auto;
@@ -36,7 +39,7 @@
     color: #f9f3f4;
     text-shadow: 0 0 300px black;
   }
-  
+   
 
   
 .p {
@@ -44,4 +47,5 @@
     line-height: 200%;
     margin:3%;
     font-family: sans-serif;
+    color: white;
   }

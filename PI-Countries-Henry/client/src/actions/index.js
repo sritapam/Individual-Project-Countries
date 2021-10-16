@@ -1,60 +1,74 @@
-import axios from 'axios';
+import axios from "axios";
+
+// export const getCountries = () => {
+//   return async function (dispatch) {
+//     try {
+//       var json = await axios.get('http://localhost:3001/countries');
+//       return dispatch({
+//         type: 'GET_COUNTRIES',
+//         payload: json.data,
+//       });
+//     } catch (e) {
+//       console.error(e);
+//     }
+//   };
+// };
 
 export const getCountries = () => {
-  return async function (dispatch) {
-    try {
-      var json = await axios.get('http://localhost:3001/countries');
-      return dispatch({
-        type: 'GET_COUNTRIES',
-        payload: json.data,
+  return function (dispatch) {
+    return fetch("http://localhost:3001/countries")
+      .then((resp) => resp.json())
+      .then((json) => {
+        return dispatch({
+          type: "GET_COUNTRIES",
+          payload: json,
+        });
       });
-    } catch (e) {
-      console.error(e);
-    }
   };
 };
 
 export const filterCountryByContinent = (payload) => {
   return {
-    type: 'FILTER_BY_CONTINENT',
+    type: "FILTER_BY_CONTINENT",
     payload,
   };
 };
 
-
 export const filterByAlphabet = (payload) => {
   return {
-    type: 'FILTER_BY_ALPHABET',
+    type: "FILTER_BY_ALPHABET",
     payload,
   };
 };
 
 export const filterByArea = (payload) => {
   return {
-    type: 'FILTER_BY_AREA',
+    type: "FILTER_BY_AREA",
     payload,
   };
 };
 
 export function filterByActivity(payload) {
   return {
-    type: 'FILTER_BY_ACTIVITY',
+    type: "FILTER_BY_ACTIVITY",
     payload,
   };
 }
 
-export const getNameCountries = (name) =>{
-  return async function (dispatch){
+export const getNameCountries = (name) => {
+  return async function (dispatch) {
     try {
-    var json = await axios.get(`http://localhost:3001/countries?name=${name}`);
-    return dispatch({
-      type: 'GET_NAME_COUNTRIES',
-      payload: json.data
-    })
-  } catch (e){
-    console.log(e)
-  }
-}
+      var json = await axios.get(
+        `http://localhost:3001/countries?name=${name}`
+      );
+      return dispatch({
+        type: "GET_NAME_COUNTRIES",
+        payload: json.data,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 };
 
 export const getCountryByParams = (id) => {
@@ -62,7 +76,7 @@ export const getCountryByParams = (id) => {
     try {
       var json = await axios.get(`http://localhost:3001/countries/${id}`);
       return dispatch({
-        type: 'GET_COUNTRIES_BY_ID',
+        type: "GET_COUNTRIES_BY_ID",
         payload: json.data,
       });
     } catch (e) {
@@ -74,9 +88,9 @@ export const getCountryByParams = (id) => {
 export const getActivities = () => {
   return async function (dispatch) {
     try {
-      var info = await axios.get('http://localhost:3001/activity');
+      var info = await axios.get("http://localhost:3001/activity");
       return dispatch({
-        type: 'GET_ACTIVITIES',
+        type: "GET_ACTIVITIES",
         payload: info.data,
       });
     } catch (e) {
@@ -87,13 +101,42 @@ export const getActivities = () => {
 
 export const postActivity = (payload) => {
   return async function (dispatch) {
-    
     try {
-      
-      const response = await axios.post('http://localhost:3001/activity', payload);
+      const response = await axios.post(
+        "http://localhost:3001/activity",
+        payload
+      );
       return response;
     } catch (e) {
-      console.error(e); 
+      console.error(e);
     }
   };
 };
+
+// export const deleteActivity = (payload) => {
+//   return async function (dispatch) {
+
+//     try {
+//       const response = await axios.delete('http://localhost:3001/activity?name=' + payload);
+//       return dispatch({
+//         type: 'REMOVE_ACTION',
+//         payload: response.data
+//       });
+//     } catch (e) {
+//       console.error(e);
+//     }
+//   };
+// };
+
+// export const GetCountries = ()=> {
+//   return async function (dispatch) {
+//     fetch('http://localhost:3001/countries')
+//     .then(resp=> resp.json())
+//     .then(data=>{
+//       dispatch({
+//         type: 'GET_COUNTRIES',
+//         payload: json.data,
+//       })
+//     })
+//   }
+// }

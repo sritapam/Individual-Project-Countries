@@ -11,7 +11,7 @@ export default function FilterForActivities(){
     const allActivities = useSelector((state) => state.activities);
     useEffect(() => {
         dispatch(getActivities())
-    }, []);
+    }, [dispatch]);
 
     const handleFilterByActivity = (act)=>{
         dispatch(filterByActivity(act))
