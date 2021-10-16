@@ -13,6 +13,7 @@ router.get('/countries', getAllCountries);
 router.get('/countries/:idPais', getCountryById);
 router.post('/activity', postActivity);
 router.get('/activity', getActivity);
+// router.delete('/activity', deleteActivity);
 
 
 module.exports = router;

@@ -7,8 +7,8 @@ module.exports = (sequelize) => {
     
     alpha3Code:{
       type: DataTypes.STRING(3),
-      allowNull: false, // no permite que este vacio
-      primaryKey: true, //clave primaria
+      allowNull: false, 
+      primaryKey: true, 
 
     },
     name: {
