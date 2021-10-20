@@ -1,31 +1,31 @@
 import axios from "axios";
 
-// export const getCountries = () => {
-//   return async function (dispatch) {
-//     try {
-//       var json = await axios.get('http://localhost:3001/countries');
-//       return dispatch({
-//         type: 'GET_COUNTRIES',
-//         payload: json.data,
-//       });
-//     } catch (e) {
-//       console.error(e);
-//     }
-//   };
-// };
-
 export const getCountries = () => {
-  return function (dispatch) {
-    return fetch("http://localhost:3001/countries")
-      .then((resp) => resp.json())
-      .then((json) => {
-        return dispatch({
-          type: "GET_COUNTRIES",
-          payload: json,
-        });
+  return async function (dispatch) {
+    try {
+      var json = await axios.get('/countries');
+      return dispatch({
+        type: 'GET_COUNTRIES',
+        payload: json.data,
       });
+    } catch (e) {
+      console.error(e);
+    }
   };
 };
+
+// export const getCountries = () => {
+//   return function (dispatch) {
+//     return fetch("http://localhost:3001/countries")
+//       .then((resp) => resp.json())
+//       .then((json) => {
+//         return dispatch({
+//           type: "GET_COUNTRIES",
+//           payload: json,
+//         });
+//       });
+//   };
+// };
 
 export const filterCountryByContinent = (payload) => {
   return {
@@ -59,7 +59,7 @@ export const getNameCountries = (name) => {
   return async function (dispatch) {
     try {
       var json = await axios.get(
-        `http://localhost:3001/countries?name=${name}`
+        `/countries?name=${name}`
       );
       return dispatch({
         type: "GET_NAME_COUNTRIES",
@@ -74,7 +74,7 @@ export const getNameCountries = (name) => {
 export const getCountryByParams = (id) => {
   return async function (dispatch) {
     try {
-      var json = await axios.get(`http://localhost:3001/countries/${id}`);
+      var json = await axios.get(`/countries/${id}`);
       return dispatch({
         type: "GET_COUNTRIES_BY_ID",
         payload: json.data,
@@ -88,7 +88,7 @@ export const getCountryByParams = (id) => {
 export const getActivities = () => {
   return async function (dispatch) {
     try {
-      var info = await axios.get("http://localhost:3001/activity");
+      var info = await axios.get("/activity");
       return dispatch({
         type: "GET_ACTIVITIES",
         payload: info.data,
@@ -103,7 +103,7 @@ export const postActivity = (payload) => {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "http://localhost:3001/activity",
+        "/activity",
         payload
       );
       return response;

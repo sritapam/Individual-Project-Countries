@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import NavBar from "../NavBar/NavBar";
 import s from "./FilterForActivities.module.css";
 
 import { getActivities, filterByActivity } from '../../actions/index';

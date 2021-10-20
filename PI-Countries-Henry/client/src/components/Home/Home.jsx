@@ -71,7 +71,7 @@ export default function Home() {
     <div className={s.all}>
       <div className={s.bkg} />
       <div className={s.container}>
-        <div>
+      <div>
           <NavBar setCurrentPage={setCurrentPage} />
         </div>
         <div className={s.search}>
@@ -119,13 +119,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div>
-          <Pagination
-            countriesPerPage={countriesPerPage}
-            totalCountries={allCountries.length}
-            pagination={pagination}
-          />
-        </div>
+
         <div className={s.cards}>
           {currentCountries.map((c, idx) => (
             <div className={s.card} key={idx}>
@@ -140,6 +134,13 @@ export default function Home() {
               {/* </Link> */}
             </div>
           ))}
+        </div>
+        <div>
+          <Pagination
+            countriesPerPage={countriesPerPage}
+            totalCountries={allCountries.length}
+            pagination={pagination}
+          />
         </div>
       </div>
     </div>

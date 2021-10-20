@@ -17,6 +17,7 @@ export default function CountryDetail(props) {
 
   return (
     <div className={s.body}>
+      <NavBar />
       <div className={s.bkg} />
       <div className={s.container}>
         {countryFound ? (

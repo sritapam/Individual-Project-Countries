@@ -104,6 +104,7 @@ export default function ActivityCreate() {
 
   return (
     <div className={styles.activity}>
+      <NavBar />
       {/* <h1 className={styles.activity_title}>Create here: </h1> */}
       <form className={styles.form1} onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.line_1}>
