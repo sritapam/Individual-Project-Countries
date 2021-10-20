@@ -6,17 +6,37 @@ describe('Country model', () => {
     .catch((err) => {
       console.error('Unable to connect to the database:', err);
     }));
-  describe('Validators', () => {
-    beforeEach(() => Country.sync({ force: true }));
-    describe('name', () => {
-      it('should throw an error if name is null', (done) => {
-        Country.create({})
-          .then(() => done(new Error('It requires a valid name')))
-          .catch(() => done());
-      });
-      it('should work when its a valid name', () => {
-        Country.create({ name: 'Argentina' });
-      });
-    });
-  });
+
+  describe('Country model', async () => {
+    
+    it('should contain atributes: alpha3Code, name, flags, continent, region, capital and area',
+    async() =>{
+      const country = await Country.findOne({
+        where: {alpha3Code: 'ARG'}
+      })    
+      expect(country.dataValues).to.have.own.property('alpha3Code');
+      expect(country.dataValues).to.have.own.property('name');
+      expect(country.dataValues).to.have.own.property('flags');
+      expect(country.dataValues).to.have.own.property('continent');
+      expect(country.dataValues).to.have.own.property('region');
+      expect(country.dataValues).to.have.own.property('capital');
+      expect(country.dataValues).to.have.own.property('area');
+        })
+    it('atribute name and capital must be a string', async ()=>{
+        const country = await Country.findOne(
+            {
+                where:{alpha3Code: 'ARG'}
+            }
+        )
+        expect(country.dataValues.name).to.be.a('string');
+    })
+    it('atribute capital must be a string', async ()=>{
+        const country = await Country.findOne(
+            {
+                where:{alpha3Code: 'ARG'}
+            }
+        )
+        expect(country.dataValues.capital).to.be.a('string');
+    })
+})
 });
